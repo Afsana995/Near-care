@@ -1,0 +1,182 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    overflow: hidden;
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/receipt.jpg");
+    background-size: cover;
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 60px;
+    background-color: whitesmoke;
+  }
+  
+  nav {
+    position: absolute;
+    top: 0px;
+    left: 430px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 0 15px;
+    position: relative;
+    top: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: rgb(84, 83, 83);
+    font-size: 17px;
+    width: 200px;
+    height: 40px;
+    padding: 4px 10px 4px 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 100px;
+    background-color: transparent;
+  }
+  
+  nav ul li a:hover {
+    color: rgb(65, 115, 200);
+  }
+  
+  nav ul li #log {
+    position: absolute;
+    left: -50px;
+  }
+  
+  #log {
+    position: relative;
+    left: 100px;
+  }
+  
+  #sign {
+    position: relative;
+    left: 100px;
+  }
+  
+  #receipt {
+    background-color: rgb(75, 122, 242);
+    color: white;
+  }
+  
+  .head {
+    position: relative;
+    left: 40px;
+    top: 10px;
+  }
+  
+  #logo {
+    height: 33px;
+    width: 35px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+  }
+  
+  #circle {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    background-color: rgb(75, 122, 242);
+  }
+  
+  #cn {
+    font-size: 27px;
+    font-weight: bold;
+    color: rgb(75, 122, 242);
+    position: absolute;
+    top: 7px;
+    left: 50px;
+  }
+  
+  .upper {
+    position: absolute;
+    top: 120px;
+    left: 700px;
+    font-size: 17px;
+  }
+  
+  form {
+    width: 50vw;
+    max-width: 500px;
+    min-width: 300px;
+  }
+  
+  label {
+    display: block;
+    margin: 2rem 0;
+  }
+  
+  input[type="text"] {
+    width: 200px;
+    height: 25px;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+  
+  .line1 {
+    background-color: black;
+    height: 1px;
+    width: 500px;
+  }
+  
+  .line2 {
+    background-color: black;
+    height: 1px;
+    width: 500px;
+  }
+  
+  .cost {
+    font-size: 30px;
+  }
+  
+  #name1 {
+    position: relative;
+    left: 33px;
+  }
+  
+  #disease1 {
+    position: relative;
+    left: 72px;
+  }
+  
+  #hospital1 {
+    position: relative;
+    left: 22px;
+  }
+  
+  #bed1 {
+    position: relative;
+    left: 67px;
+  }
+  
+  #service1 {
+    position: relative;
+    left: 45px;
+  }
+  
+  #ambulance1 {
+    position: relative;
+    left: 20px;
+  }
+  
+  #total1 {
+    position: relative;
+    left: 64px;
+  }

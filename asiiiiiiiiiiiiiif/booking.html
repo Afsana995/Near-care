@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Hospital Booking Page</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+
+			display: flex;
+			justify-content: right;
+			align-items: right;
+			min-height: 100vh;
+		}
+
+		.container {
+			background-color: #fff;
+			padding: 30px;
+			border-left: 2px solid #000;
+			border-right: 2px solid #000;
+			margin: 50px;
+			position: relative;
+			left: -150px;
+		}
+		#img2{
+			height: 400px;
+			width: 540px;
+			position: relative;
+			left: -270px;
+			top: 150px;
+		}
+		form {
+			position: relative;
+		
+		}
+
+		input[type="text"],
+		input[type="number"],
+		select,
+		input[type="submit"] {
+			display: block;
+			margin: 0 auto;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+			max-width: 400px;
+			margin-bottom: 20px;
+		}
+
+		img {
+			height: 400px;
+			width: 400px;
+		}
+
+		#headlogo {
+			text-decoration: none;
+			position: relative;
+			left: 200px;
+			top: 30px;
+		
+
+		}
+
+		input[type="submit"] {
+			padding: 20px 50px;
+			background-color: #007bff;
+			border: none;
+			color: #fff;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			width: auto;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #0062cc;
+			transform: translateY(-2px);
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+		}
+
+		.note {
+			font-size: 14px;
+			color: #777;
+			text-align: center;
+		}
+
+		label {
+			display: block;
+			text-align: left;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+
+		.find-hospital-btn {
+			margin-top: 20px;
+			text-align: center;
+			background-color: #007bff;
+			border: none;
+			color: #fff;
+			padding: 10px 50px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			width: auto;
+		}
+
+		.find-hospital-btn:hover {
+			background-color: #0062cc;
+			transform: translateY(-2px);
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+		}
+
+		.head {
+			position: relative;
+			left: 40px;
+			top: 10px;
+		}
+
+		#logo {
+			height: 33px;
+			width: 35px;
+			position: absolute;
+			top: 4px;
+			left: 3px;
+		}
+
+		#circle {
+			height: 42px;
+			width: 42px;
+			border-radius: 50%;
+			background-color: rgb(75, 122, 242);
+		}
+		#cn {
+			width: 80px;
+			font-weight: bold;
+			color: rgb(75, 122, 242);
+			position: relative;
+			left: -12px;
+			font-family: "Poppins", sans-serif;
+		}
+	</style>
+</head>
+
+<body>
+	<a href="index.php" id="headlogo">
+		<div class="head">
+			<div id="circle"></div>
+			<img src="../images/+.png" id="logo">
+			<span id="cn">Near Care</span>
+		</div>
+	</a>
+	<img src="./images/booking.png" id="img2">
+	<div class="container">
+		<h2>Book an Appointment</h2>
+		<form>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<label for="age">Age:</label>
+			<input type="number" id="age" name="age" required>
+			<label for="disease">Disease:</label>
+			<input type="text" id="disease" name="disease" required>
+			<label for="area">Area:</label>
+			<select id="area" name="area" required>
+				<option value="">--Select an area--</option>
+				<option value="area1">Area 1</option>
+				<option value="area2">Area 2</option>
+				<option value="area3">Area 3</option>
+			</select>
+			<button type="submit" class="find-hospital-btn">Find Hospital</button>
+		</form>
+
+	</div>
+
+</body>
+
+</html>

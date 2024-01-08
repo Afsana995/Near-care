@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        table th {
+            padding: 8px;
+            background-color: #f2f2f2;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Receipt</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <th>Disease</th>
+                <td id="disease"></td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td id="age"></td>
+            </tr>
+            <tr>
+                <th>Ambulance</th>
+                <td id="ambulance"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td id="gender"></td>
+            </tr>
+            <tr>
+                <th>Hospital</th>
+                <td id="hospital"></td>
+            </tr>
+            <tr>
+                <th>Bed Cost</th>
+                <td id="bedCost"></td>
+            </tr>
+            <tr>
+                <th>Service Charge</th>
+                <td>390</td>
+            </tr>
+            <tr>
+                <th>Total Expense</th>
+                <td id="totalCost">390</td>
+            </tr>
+        </table> 
+
+        <button class="btn" onclick="window.print()">Print Receipt</button>
+    </div>
+
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    
+        function populateReceipt() {
+            var name = getParameterByName('name');
+            var disease = getParameterByName('disease');
+            var age = getParameterByName('age');
+            var ambulance = getParameterByName('ambulance');
+            var gender = getParameterByName('gender');
+            var hospital = getParameterByName('hospital'); // Retrieve the hospital value from the query parameters  //imp
+            var bedCost = getParameterByName('bedCost');
+            var totalCost = getParameterByName('totalCost');
+    
+            document.getElementById('name').textContent = name || 'empty';
+            document.getElementById('disease').textContent = disease || 'empty';
+            document.getElementById('age').textContent = age || 'empty';
+            document.getElementById('ambulance').textContent = (ambulance === 'true') ? 'Provide' : 'Not Provide';
+            document.getElementById('gender').textContent = gender || 'empty';
+            document.getElementById('hospital').textContent = hospital || 'empty'; // Display the hospital value    //imp
+            
+            if(hospital == 'kurmi') {
+                bedCost = 4500;
+            }
+            if(hospital == 'popular') {
+                bedCost = 4800;
+            }
+            if(hospital == 'labb') {
+                bedCost = 5900;
+            }
+            if(hospital == 'united') {
+                bedCost = 4500;
+            }
+            if(hospital == 'medinova') {
+                bedCost = 5000;
+            }
+
+            console.log(hospital);
+            document.getElementById('bedCost').textContent = bedCost || 'empty';
+            document.getElementById('totalCost').textContent = (bedCost+390) || 'empty';
+        }
+    
+        populateReceipt();
+    </script>
+    
+</body>
+</html>
